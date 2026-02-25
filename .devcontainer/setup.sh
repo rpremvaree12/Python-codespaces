@@ -15,3 +15,4 @@ x11vnc -display :1 -nopw -forever -shared -rfbport 5900 &
 websockify --web=/usr/share/novnc 6080 localhost:5900 &
 
 pip install pygame
+pip install cmu-graphics
