@@ -9,6 +9,26 @@ It uses:
 
 This is especially useful for running and testing GUI libraries like Pygame, CMU Graphics, Tkinter, or other Python GUI frameworks inside Codespaces.
 
+## Getting Started
+
+Fork or clone this repo and open it in a Codespace. The environment will configure itself automatically using the included `.devcontainer` setup — no manual installation needed.
+
+Once the Codespace finishes loading:
+
+1. Port `noVNC Desktop 6080` should appear automatically in the **Ports** tab.
+2. If it doesn't, manually add port `6080`, right-click on visibility and change it to **Public**.
+3. Click the globe icon to open it in your browser.
+4. If the GUI desktop hasn't loaded, click `vnc.html` or `vnc_auto.html` on the noVNC page
+5. Click `Connect`
+6. Open a new terminal in your Codespace and run your script:
+
+```bash
+python3 your_script.py
+```
+
+7. Switch to the noVNC browser tab to see your GUI output.
+
+
 ## What's in this repo
 
 `.devcontainer/`
@@ -17,20 +37,6 @@ This folder tells Codespaces how to set up your environment automatically when y
 `.start-gui.sh`
 A shell script that starts the virtual desktop manually. You won't need this if you're using Codespaces (the devcontainer handles it), but it's useful if you want to restart the display without rebuilding your environment.
 
-## Getting Started
-
-Fork or clone this repo and open it in a Codespace. The environment will configure itself automatically using the included `.devcontainer` setup — no manual installation needed.
-
-Once the Codespace finishes loading:
-
-1. Port `6080` should appear automatically in the **Ports** tab and open in your browser. If it doesn't, manually add port `6080`, set its visibility to **Public**, and open the URL.
-2. If the GUI desktop hasn't loaded, click `vnc.html` or `vnc_auto.html` on the noVNC page.
-3. Open a new terminal in your Codespace and run your script:
-```bash
-python3 your_script.py
-```
-
-4. Switch to the noVNC browser tab to see your GUI output.
 
 ## Environment Variables
 
@@ -50,3 +56,7 @@ export SDL_VIDEODRIVER=x11
 - ALSA audio warnings can be ignored — Codespaces doesn't provide sound output.
 - Press ESC or close the window in the GUI tab to exit your app cleanly.
 - You can adapt this setup for any GUI toolkit, not just Pygame.
+
+## Credits
+
+Setup approach based on [Run Python GUI in GitHub Codespaces](https://www.freecodecamp.org/news/run-python-gui-in-github-codespaces/) by freeCodeCamp. Extended to include automated devcontainer configuration, environment variable handling, and CMU Graphics support.
