@@ -1,0 +1,16 @@
+{
+  "name": "Pygame Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "noVNC Desktop",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "remoteEnv": {
+    "DISPLAY": ":1",
+    "SDL_VIDEODRIVER": "x11"
+  }
+}
