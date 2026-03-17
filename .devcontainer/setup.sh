@@ -4,6 +4,8 @@ set -e
 # Remove broken yarn repo
 sudo rm /etc/apt/sources.list.d/yarn.list 2>/dev/null || true
 
+echo "🔧 Installing dependencies..."
+
 sudo apt-get update -y
 sudo apt-get install -y xvfb x11vnc fluxbox websockify novnc
 
@@ -16,3 +18,4 @@ websockify --web=/usr/share/novnc 6080 localhost:5900 &
 
 pip install pygame
 pip install cmu-graphics
+
